@@ -1,0 +1,2023 @@
+2015/08/20 10:40:10 [error] [php] include(User.php): failed to open stream: No such file or directory (/opt/lampp/htdocs/yii/framework/YiiBase.php:432)
+Stack trace:
+#0 /opt/lampp/htdocs/yii/www/files/protected/components/UserIdentity.php(47): spl_autoload_call()
+#1 /opt/lampp/htdocs/yii/www/files/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#2 /opt/lampp/htdocs/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate()
+#3 /opt/lampp/htdocs/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute()
+#4 /opt/lampp/htdocs/yii/framework/base/CModel.php(159): CInlineValidator->validate()
+#5 /opt/lampp/htdocs/yii/www/files/protected/controllers/SiteController.php(94): LoginForm->validate()
+#6 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /opt/lampp/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#9 /opt/lampp/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /opt/lampp/htdocs/yii/www/files/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/www/files/index.php/site/login
+in /opt/lampp/htdocs/yii/www/files/protected/components/UserIdentity.php (47)
+in /opt/lampp/htdocs/yii/www/files/protected/models/LoginForm.php (52)
+in /opt/lampp/htdocs/yii/www/files/protected/controllers/SiteController.php (94)
+2015/08/20 10:41:05 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "validatePassword".' in /opt/lampp/htdocs/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/db/ar/CActiveRecord.php(227): CComponent->__call('validatePasswor...', Array)
+#1 /opt/lampp/htdocs/yii/www/files/protected/components/UserIdentity.php(50): CActiveRecord->__call('validatePasswor...', Array)
+#2 /opt/lampp/htdocs/yii/www/files/protected/components/UserIdentity.php(50): User->validatePassword('pavla')
+#3 /opt/lampp/htdocs/yii/www/files/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#4 /opt/lampp/htdocs/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 /opt/lampp/htdocs/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 /opt/lampp/htdocs/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 /opt/lampp/htdocs/yii/www/files/protected/controllers/SiteController.php(94): CModel->validate()
+#8 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#9 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /opt/lampp/htdocs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#13 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /opt/lampp/htdocs/yii/www/files/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/www/files/index.php/site/login
+HTTP_REFERER=http://localhost/yii/www/files/index.php/site/login
+---
+2015/08/24 10:29:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'files2.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2015/08/24 10:29:21 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1215 Cannot add foreign key constraint. The SQL statement executed was: ALTER TABLE `files` ADD CONSTRAINT `author` FOREIGN KEY (`author_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE.
+2015/08/24 10:29:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1215 Cannot add foreign key constraint. The SQL statement executed was: ALTER TABLE `files` ADD CONSTRAINT `author` FOREIGN KEY (`author_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE' in /opt/lampp/htdocs/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/db/CDbCommand.php(1463): CDbCommand->execute()
+#1 /opt/lampp/htdocs/yii/framework/db/CDbMigration.php(366): CDbCommand->addForeignKey('author', 'files', 'author_id', 'user', 'id', 'CASCADE', 'CASCADE')
+#2 /opt/lampp/htdocs/yii/www/files2/protected/migrations/m150820_084503_table.php(15): CDbMigration->addForeignKey('author', 'files', 'author_id', 'user', 'id', 'CASCADE', 'CASCADE')
+#3 /opt/lampp/htdocs/yii/framework/cli/commands/MigrateCommand.php(415): m150820_084503_table->up()
+#4 /opt/lampp/htdocs/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp('m150820_084503_...')
+#5 [internal function]: MigrateCommand->actionUp(Array)
+#6 /opt/lampp/htdocs/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 /opt/lampp/htdocs/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#8 /opt/lampp/htdocs/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CConsoleApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/framework/yiic.php(33): CApplication->run()
+#11 /opt/lampp/htdocs/yii/www/files2/protected/yiic.php(7): require_once('/opt/lampp/htdo...')
+#12 /opt/lampp/htdocs/yii/www/files2/protected/yiic(4): require_once('/opt/lampp/htdo...')
+#13 {main}
+---
+2015/08/24 09:32:57 [error] [php] include(User.php): failed to open stream: No such file or directory (/opt/lampp/htdocs/yii/framework/YiiBase.php:432)
+Stack trace:
+#0 /opt/lampp/htdocs/yii/www/files2/protected/components/UserIdentity.php(47): spl_autoload_call()
+#1 /opt/lampp/htdocs/yii/www/files2/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#2 /opt/lampp/htdocs/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate()
+#3 /opt/lampp/htdocs/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute()
+#4 /opt/lampp/htdocs/yii/framework/base/CModel.php(159): CInlineValidator->validate()
+#5 /opt/lampp/htdocs/yii/www/files2/protected/controllers/SiteController.php(95): LoginForm->validate()
+#6 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /opt/lampp/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#9 /opt/lampp/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /opt/lampp/htdocs/yii/www/files2/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/www/files2/index.php/site/login
+in /opt/lampp/htdocs/yii/www/files2/protected/components/UserIdentity.php (47)
+in /opt/lampp/htdocs/yii/www/files2/protected/models/LoginForm.php (52)
+in /opt/lampp/htdocs/yii/www/files2/protected/controllers/SiteController.php (95)
+2015/08/24 09:34:29 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'files2.file' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `file`.
+in /opt/lampp/htdocs/yii/www/files2/index.php (13)
+2015/08/24 09:34:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'files2.file' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `file`.
+in /opt/lampp/htdocs/yii/www/files2/index.php (13)
+2015/08/24 09:35:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'files2.file' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `file`.
+in /opt/lampp/htdocs/yii/www/files2/index.php (13)
+2015/08/24 09:48:08 [error] [exception.CException] exception 'CException' with message 'Alias "application.components.EWebUser" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /opt/lampp/htdocs/yii/framework/YiiBase.php:323
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/YiiBase.php(196): YiiBase::import('application.com...', true)
+#1 /opt/lampp/htdocs/yii/framework/base/CModule.php(393): YiiBase::createComponent(Array)
+#2 /opt/lampp/htdocs/yii/framework/base/CModule.php(103): CModule->getComponent('user')
+#3 /opt/lampp/htdocs/yii/www/files2/protected/views/layouts/main.php(35): CModule->__get('user')
+#4 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(126): require('/opt/lampp/htdo...')
+#5 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/opt/lampp/htdo...', Array, true)
+#6 /opt/lampp/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/opt/lampp/htdo...', Array, true)
+#7 /opt/lampp/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#8 /opt/lampp/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#9 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(214): COutputProcessor->run()
+#10 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#11 /opt/lampp/htdocs/yii/www/files2/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#12 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(126): require('/opt/lampp/htdo...')
+#13 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/opt/lampp/htdo...', Array, true)
+#14 /opt/lampp/htdocs/yii/framework/web/CController.php(784): CBaseController->renderFile('/opt/lampp/htdo...', Array, true)
+#15 /opt/lampp/htdocs/yii/www/files2/protected/controllers/SiteController.php(32): CController->render('index')
+#16 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#17 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /opt/lampp/htdocs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#19 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#21 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#22 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#23 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/yii/www/files2/index.php
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/site/login
+---
+2015/08/24 09:49:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/admin')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/admin
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/create
+---
+2015/08/24 09:50:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/create')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/create
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file
+---
+2015/08/24 09:52:38 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/admin')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/admin
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file
+---
+2015/08/24 09:52:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/admin')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/admin
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file
+---
+2015/08/24 09:53:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/create')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/create
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file
+---
+2015/08/24 10:08:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:08:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:09:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:09:48 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:10:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:13:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:13:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+---
+2015/08/24 10:14:04 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /opt/lampp/htdocs/yii/framework/web/CController.php:336
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/view')
+#10 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/view
+---
+2015/08/24 10:14:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:14:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/admin')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/admin
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:15:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:16:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/view/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/view/fro...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/view/frog.jpeg
+---
+2015/08/24 10:16:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/view/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/view/fro...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/view/frog.jpeg
+---
+2015/08/24 10:17:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/view/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/view/fro...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/view/frog.jpeg
+---
+2015/08/24 10:18:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/view/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/view/fro...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/view/frog.jpeg
+---
+2015/08/24 10:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:22:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:22:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:23:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:23:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/
+---
+2015/08/24 10:23:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:23:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:25:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:25:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:25:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:25:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:26:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:28:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:28:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/admin')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/admin
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:28:45 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/admin')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/admin
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:30:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/admin')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/admin
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:30:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/admin')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/admin
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:30:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/admin')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/admin
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/create
+---
+2015/08/24 10:33:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:33:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:35:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:36:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:36:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:36:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:37:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:37:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:38:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:38:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:38:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:38:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:41:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:42:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:46:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 10:49:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:49:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+---
+2015/08/24 10:50:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+---
+2015/08/24 10:50:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:50:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:50:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:50:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:50:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:50:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:51:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:51:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:51:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:51:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:51:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:51:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:54:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:55:47 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /opt/lampp/htdocs/yii/framework/web/CController.php:336
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/view/yii/w...')
+#10 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/www/files2/?r=File/view/yii/www/files2/images/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:56:20 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /opt/lampp/htdocs/yii/framework/web/CController.php:336
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/view/yii/w...')
+#10 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/www/files2/?r=File/view/yii/www/files2/images/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:56:21 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /opt/lampp/htdocs/yii/framework/web/CController.php:336
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/view/yii/w...')
+#10 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/www/files2/?r=File/view/yii/www/files2/images/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:57:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view?file=images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('view?file=image...')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('view?file=image...')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/view?file=...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/?r=File/view?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:57:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "viewimages".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('viewimages')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('viewimages')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/viewimages...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/?r=File/viewimages/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:58:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "viewimages".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('viewimages')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('viewimages')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/viewimages...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/?r=File/viewimages/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:58:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "download?file=images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('download?file=i...')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download?file=i...')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download?f...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/?r=File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:59:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "download?file=images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('download?file=i...')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download?file=i...')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download?f...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/?r=File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:59:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "downloadimages".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('downloadimages')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('downloadimages')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/downloadim...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/?r=File/downloadimages/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 10:59:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "downloadimages".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('downloadimages')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('downloadimages')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/downloadim...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/?r=File/downloadimages/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:00:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "download?file=images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('download?file=i...')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download?file=i...')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download?f...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/?r=File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:00:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:00:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Files/download?file=images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Files/download?...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=Files/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:01:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:01:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Files/download?file=images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Files/download?...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=Files/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:03:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Files/download?file=images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Files/download?...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=Files/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:03:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Files/download?file=images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Files/download?...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=Files/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:03:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "viewimages".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('viewimages')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('viewimages')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/viewimages...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/?r=File/viewimages/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/view&id=1
+---
+2015/08/24 11:04:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:04:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Files/download?file=images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Files/download?...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=Files/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:06:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:06:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Files/downloadimages/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Files/downloadi...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=Files/downloadimages/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:10:30 [error] [php] Use of undefined constant File - assumed 'File' (/opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php:12)
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/zii/widgets/CListView.php(291): FileController->renderFile()
+#1 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback()
+#4 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(149): CListView->renderContent()
+#5 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(181): CListView->run()
+#6 /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php(20): FileController->widget()
+#7 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(126): require()
+#8 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(95): FileController->renderInternal()
+#9 /opt/lampp/htdocs/yii/framework/web/CController.php(869): FileController->renderFile()
+#10 /opt/lampp/htdocs/yii/framework/web/CController.php(782): FileController->renderPartial()
+#11 /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php(139): FileController->render()
+#12 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): FileController->actionIndex()
+#13 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): FileController->runAction()
+#15 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): FileController->filterAccessControl()
+#18 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#20 /opt/lampp/htdocs/yii/framework/web/CController.php(265): FileController->runActionWithFilters()
+#21 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): FileController->run()
+#22 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /opt/lampp/htdocs/yii/www/files2/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/www/files2/?r=file/index
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php (12)
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php (20)
+in /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php (139)
+2015/08/24 11:11:05 [error] [php] Use of undefined constant File - assumed 'File' (/opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php:12)
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/zii/widgets/CListView.php(291): FileController->renderFile()
+#1 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback()
+#4 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(149): CListView->renderContent()
+#5 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(181): CListView->run()
+#6 /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php(20): FileController->widget()
+#7 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(126): require()
+#8 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(95): FileController->renderInternal()
+#9 /opt/lampp/htdocs/yii/framework/web/CController.php(869): FileController->renderFile()
+#10 /opt/lampp/htdocs/yii/framework/web/CController.php(782): FileController->renderPartial()
+#11 /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php(139): FileController->render()
+#12 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): FileController->actionIndex()
+#13 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): FileController->runAction()
+#15 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): FileController->filterAccessControl()
+#18 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#20 /opt/lampp/htdocs/yii/framework/web/CController.php(265): FileController->runActionWithFilters()
+#21 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): FileController->run()
+#22 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /opt/lampp/htdocs/yii/www/files2/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/www/files2/?r=file/index
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php (12)
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php (20)
+in /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php (139)
+2015/08/24 11:11:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Files/downloadimages/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Files/downloadi...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=Files/downloadimages/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:12:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:12:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:12:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:15:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:15:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:15:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:15:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:15:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:15:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Files/downloadimages/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Files/downloadi...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=Files/downloadimages/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:16:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Files/downloadimages/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Files/downloadi...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=Files/downloadimages/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:16:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "downloadimages".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('downloadimages')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('downloadimages')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/downloadim...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=File/downloadimages/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:16:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "downloadimages".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('downloadimages')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('downloadimages')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/downloadim...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=File/downloadimages/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:16:24 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /opt/lampp/htdocs/yii/framework/web/CController.php:336
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download')
+#9 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download/i...')
+#10 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=File/download/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:16:45 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /opt/lampp/htdocs/yii/framework/web/CController.php:336
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download')
+#9 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download/i...')
+#10 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=File/download/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/?r=file/index
+---
+2015/08/24 11:16:47 [error] [php] Array to string conversion (/opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php:13)
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/zii/widgets/CListView.php(291): FileController->renderFile()
+#1 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback()
+#4 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(149): CListView->renderContent()
+#5 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(181): CListView->run()
+#6 /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php(20): FileController->widget()
+#7 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(126): require()
+#8 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(95): FileController->renderInternal()
+#9 /opt/lampp/htdocs/yii/framework/web/CController.php(869): FileController->renderFile()
+#10 /opt/lampp/htdocs/yii/framework/web/CController.php(782): FileController->renderPartial()
+#11 /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php(139): FileController->render()
+#12 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): FileController->actionIndex()
+#13 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): FileController->runAction()
+#15 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): FileController->filterAccessControl()
+#18 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#20 /opt/lampp/htdocs/yii/framework/web/CController.php(265): FileController->runActionWithFilters()
+#21 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): FileController->run()
+#22 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /opt/lampp/htdocs/yii/www/files2/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/www/files2/?r=file/index
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php (13)
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php (20)
+in /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php (139)
+2015/08/24 11:16:58 [error] [php] Illegal string offset 'images/frog.jpeg' (/opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php:13)
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/zii/widgets/CListView.php(291): FileController->renderFile()
+#1 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback()
+#4 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(149): CListView->renderContent()
+#5 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(181): CListView->run()
+#6 /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php(20): FileController->widget()
+#7 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(126): require()
+#8 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(95): FileController->renderInternal()
+#9 /opt/lampp/htdocs/yii/framework/web/CController.php(869): FileController->renderFile()
+#10 /opt/lampp/htdocs/yii/framework/web/CController.php(782): FileController->renderPartial()
+#11 /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php(139): FileController->render()
+#12 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): FileController->actionIndex()
+#13 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): FileController->runAction()
+#15 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): FileController->filterAccessControl()
+#18 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#20 /opt/lampp/htdocs/yii/framework/web/CController.php(265): FileController->runActionWithFilters()
+#21 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): FileController->run()
+#22 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /opt/lampp/htdocs/yii/www/files2/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/www/files2/index.php?r=file/index
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php (13)
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php (20)
+in /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php (139)
+2015/08/24 11:17:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:18:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:18:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Files/download?file=images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Files/download?...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=Files/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:18:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Files/download/?file=images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Files/download/...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=Files/download/?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:19:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Files/download/?file=images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Files/download/...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=Files/download/?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:19:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "download?file=images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('download?file=i...')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download?file=i...')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download?f...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:19:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "download?file=images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('download?file=i...')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download?file=i...')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download?f...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:19:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "download?file=images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('download?file=i...')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download?file=i...')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download?f...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:19:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "download?file=images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('download?file=i...')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download?file=i...')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download?f...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:19:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "download?file=images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('download?file=i...')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download?file=i...')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download?f...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:20:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:20:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "download?file=images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('download?file=i...')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download?file=i...')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download?f...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:21:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "download?file=images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('download?file=i...')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download?file=i...')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download?f...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:21:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:21:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "download?file=images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('download?file=i...')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download?file=i...')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download?f...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:24:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:24:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "download?file=images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('download?file=i...')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('download?file=i...')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/download?f...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php?r=File/download?file=images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php?r=file/index
+---
+2015/08/24 11:25:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:26:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "viewimages".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('viewimages')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('viewimages')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/viewimages...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php/File/viewimages/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:27:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:27:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:27:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:27:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:27:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:29:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:29:22 [error] [php] Array to string conversion (/opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php:10)
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/zii/widgets/CListView.php(291): FileController->renderFile()
+#1 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback()
+#4 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(149): CListView->renderContent()
+#5 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(181): CListView->run()
+#6 /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php(20): FileController->widget()
+#7 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(126): require()
+#8 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(95): FileController->renderInternal()
+#9 /opt/lampp/htdocs/yii/framework/web/CController.php(869): FileController->renderFile()
+#10 /opt/lampp/htdocs/yii/framework/web/CController.php(782): FileController->renderPartial()
+#11 /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php(139): FileController->render()
+#12 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): FileController->actionIndex()
+#13 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): FileController->runAction()
+#15 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): FileController->filterAccessControl()
+#18 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#20 /opt/lampp/htdocs/yii/framework/web/CController.php(265): FileController->runActionWithFilters()
+#21 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): FileController->run()
+#22 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /opt/lampp/htdocs/yii/www/files2/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/www/files2/index.php/file/index
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php (10)
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php (20)
+in /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php (139)
+2015/08/24 11:30:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('images')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/images/fro...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:30:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /opt/lampp/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(270): CController->missingAction('images')
+#1 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/images/fro...')
+#3 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:31:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:33:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:33:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:33:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:33:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:34:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:35:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:35:13 [error] [php] Undefined variable: file (/opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php:10)
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/zii/widgets/CListView.php(291): FileController->renderFile()
+#1 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback()
+#4 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(149): CListView->renderContent()
+#5 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(181): CListView->run()
+#6 /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php(20): FileController->widget()
+#7 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(126): require()
+#8 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(95): FileController->renderInternal()
+#9 /opt/lampp/htdocs/yii/framework/web/CController.php(869): FileController->renderFile()
+#10 /opt/lampp/htdocs/yii/framework/web/CController.php(782): FileController->renderPartial()
+#11 /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php(139): FileController->render()
+#12 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): FileController->actionIndex()
+#13 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): FileController->runAction()
+#15 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): FileController->filterAccessControl()
+#18 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#20 /opt/lampp/htdocs/yii/framework/web/CController.php(265): FileController->runActionWithFilters()
+#21 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): FileController->run()
+#22 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /opt/lampp/htdocs/yii/www/files2/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/www/files2/index.php/file/index
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php (10)
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php (20)
+in /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php (139)
+2015/08/24 11:35:15 [error] [php] Undefined variable: file (/opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php:10)
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/zii/widgets/CListView.php(291): FileController->renderFile()
+#1 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback()
+#4 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(149): CListView->renderContent()
+#5 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(181): CListView->run()
+#6 /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php(20): FileController->widget()
+#7 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(126): require()
+#8 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(95): FileController->renderInternal()
+#9 /opt/lampp/htdocs/yii/framework/web/CController.php(869): FileController->renderFile()
+#10 /opt/lampp/htdocs/yii/framework/web/CController.php(782): FileController->renderPartial()
+#11 /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php(139): FileController->render()
+#12 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): FileController->actionIndex()
+#13 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): FileController->runAction()
+#15 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): FileController->filterAccessControl()
+#18 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#20 /opt/lampp/htdocs/yii/framework/web/CController.php(265): FileController->runActionWithFilters()
+#21 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): FileController->run()
+#22 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /opt/lampp/htdocs/yii/www/files2/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/www/files2/index.php/file/index
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php (10)
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php (20)
+in /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php (139)
+2015/08/24 11:35:26 [error] [php] Undefined index: images/frog.jpeg (/opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php:10)
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/zii/widgets/CListView.php(291): FileController->renderFile()
+#1 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback()
+#4 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(149): CListView->renderContent()
+#5 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(181): CListView->run()
+#6 /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php(20): FileController->widget()
+#7 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(126): require()
+#8 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(95): FileController->renderInternal()
+#9 /opt/lampp/htdocs/yii/framework/web/CController.php(869): FileController->renderFile()
+#10 /opt/lampp/htdocs/yii/framework/web/CController.php(782): FileController->renderPartial()
+#11 /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php(139): FileController->render()
+#12 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): FileController->actionIndex()
+#13 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): FileController->runAction()
+#15 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): FileController->filterAccessControl()
+#18 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#20 /opt/lampp/htdocs/yii/framework/web/CController.php(265): FileController->runActionWithFilters()
+#21 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): FileController->run()
+#22 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /opt/lampp/htdocs/yii/www/files2/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/www/files2/index.php/file/index
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/_view.php (10)
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php (20)
+in /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php (139)
+2015/08/24 11:35:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 11:36:23 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /opt/lampp/htdocs/yii/framework/web/CController.php:336
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/view')
+#10 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/view
+---
+2015/08/24 11:36:29 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /opt/lampp/htdocs/yii/framework/web/CController.php:336
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/view')
+#10 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/www/files2/index.php/File/view
+---
+2015/08/24 11:36:43 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /opt/lampp/htdocs/yii/framework/web/CController.php:336
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('File/view')
+#10 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/www/files2/index.php/File/view
+---
+2015/08/24 11:36:43 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /opt/lampp/htdocs/yii/framework/web/CController.php:336
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/view')
+#10 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/view
+---
+2015/08/24 13:46:51 [error] [exception.CException] exception 'CException' with message 'Property "User.level" is not defined.' in /opt/lampp/htdocs/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('level')
+#1 /opt/lampp/htdocs/yii/framework/validators/CNumberValidator.php(78): CActiveRecord->__get('level')
+#2 /opt/lampp/htdocs/yii/framework/validators/CValidator.php(201): CNumberValidator->validateAttribute(Object(User), 'level')
+#3 /opt/lampp/htdocs/yii/framework/base/CModel.php(159): CValidator->validate(Object(User), 'demo')
+#4 /opt/lampp/htdocs/yii/www/files2/protected/components/UserIdentity.php(50): CModel->validate('demo')
+#5 /opt/lampp/htdocs/yii/www/files2/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#6 /opt/lampp/htdocs/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#7 /opt/lampp/htdocs/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#8 /opt/lampp/htdocs/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#9 /opt/lampp/htdocs/yii/www/files2/protected/controllers/SiteController.php(95): CModel->validate()
+#10 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#11 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /opt/lampp/htdocs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#15 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#16 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#17 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/yii/www/files2/index.php/site/login
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/site/login
+---
+2015/08/24 13:48:19 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'files2.file' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `file`.
+in /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php (20)
+in /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php (139)
+in /opt/lampp/htdocs/yii/www/files2/index.php (13)
+2015/08/24 13:48:19 [error] [exception.CDbException] exception 'CDbException' with message 'The table "file" for active record class "File" cannot be found in the database.' in /opt/lampp/htdocs/yii/framework/db/ar/CActiveRecord.php:2385
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(File))
+#1 /opt/lampp/htdocs/yii/framework/db/ar/CActiveRecord.php(661): CActiveRecord->getMetaData()
+#2 /opt/lampp/htdocs/yii/framework/db/ar/CActiveRecord.php(1606): CActiveRecord->getTableSchema()
+#3 /opt/lampp/htdocs/yii/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#4 /opt/lampp/htdocs/yii/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#5 /opt/lampp/htdocs/yii/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#6 /opt/lampp/htdocs/yii/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#7 /opt/lampp/htdocs/yii/framework/zii/widgets/CBaseListView.php(125): CDataProvider->getData()
+#8 /opt/lampp/htdocs/yii/framework/zii/widgets/CListView.php(211): CBaseListView->init()
+#9 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(147): CListView->init()
+#10 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#11 /opt/lampp/htdocs/yii/www/files2/protected/views/file/index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#12 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(126): require('/opt/lampp/htdo...')
+#13 /opt/lampp/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/opt/lampp/htdo...', Array, true)
+#14 /opt/lampp/htdocs/yii/framework/web/CController.php(869): CBaseController->renderFile('/opt/lampp/htdo...', Array, true)
+#15 /opt/lampp/htdocs/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#16 /opt/lampp/htdocs/yii/www/files2/protected/controllers/FileController.php(139): CController->render('index', Array)
+#17 /opt/lampp/htdocs/yii/framework/web/actions/CInlineAction.php(49): FileController->actionIndex()
+#18 /opt/lampp/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#19 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#25 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#27 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/index')
+#28 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#29 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/index
+HTTP_REFERER=http://localhost/yii/www/files2/index.php
+---
+2015/08/24 13:48:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 13:48:55 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(EWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('file/admin')
+#9 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/www/files2/index.php/file/admin
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 13:49:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 13:49:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 14:01:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
+2015/08/24 14:01:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/frog.jpeg".' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/frog.jpe...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/yii/www/files2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/www/files2/index.php/images/frog.jpeg
+HTTP_REFERER=http://localhost/yii/www/files2/index.php/file/index
+---
