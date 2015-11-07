@@ -24,17 +24,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FileController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FileController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/controllers/FileController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4260564">
-              <caret line="116" column="79" selection-start-line="116" selection-start-column="79" selection-end-line="116" selection-end-column="79" />
+            <state vertical-scroll-proportion="-33.346153">
+              <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
               <folding>
-                <marker date="1446544839748" expanded="true" signature="2320:2425" placeholder="INSERT INTO ..." />
-                <marker date="1446544839748" expanded="true" signature="4788:4865" placeholder="INSERT INTO ..." />
-                <marker date="1446544839748" expanded="true" signature="4927:5217" placeholder="UPDATE file ..." />
-                <marker date="1446544839748" expanded="true" signature="7930:8099" placeholder="SELECT count..file..." />
+                <marker date="1446544839000" expanded="true" signature="2320:2425" placeholder="INSERT INTO ..." />
+                <marker date="1446544839000" expanded="true" signature="4788:4865" placeholder="INSERT INTO ..." />
+                <marker date="1446544839000" expanded="true" signature="4927:5217" placeholder="UPDATE file ..." />
+                <marker date="1446544839000" expanded="true" signature="7930:8099" placeholder="SELECT count..file..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/config/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.20877193">
+              <caret line="7" column="71" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,7 +117,6 @@
         <option value="$PROJECT_DIR$/protected/views/site/index.php" />
         <option value="$PROJECT_DIR$/protected/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/protected/config/main.php" />
-        <option value="$PROJECT_DIR$/protected/config/database.php" />
         <option value="$PROJECT_DIR$/protected/views/file/importer.php" />
         <option value="$PROJECT_DIR$/protected/views/file/_importerForm.php" />
         <option value="$PROJECT_DIR$/protected/views/file/create.php" />
@@ -127,6 +136,7 @@
         <option value="$PROJECT_DIR$/protected/views/file/_export.php" />
         <option value="$PROJECT_DIR$/protected/views/file/_download.php" />
         <option value="$PROJECT_DIR$/protected/controllers/FileController.php" />
+        <option value="$PROJECT_DIR$/protected/config/database.php" />
       </list>
     </option>
   </component>
@@ -172,8 +182,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -304,12 +312,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="epu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../files2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -381,13 +409,11 @@
     <frame x="-1" y="25" width="1358" height="738" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22298326" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2293578" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961783" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39903846" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -395,9 +421,11 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39903846" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961783" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39808917" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -460,6 +488,38 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/protected/views/file/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/File.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="163" column="0" selection-start-line="162" selection-start-column="1" selection-end-line="163" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/file/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="105" column="10" selection-start-line="83" selection-start-column="4" selection-end-line="105" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/file/_download.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/File.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -481,10 +541,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1446544839748" expanded="true" signature="2320:2425" placeholder="INSERT INTO ..." />
-            <marker date="1446544839748" expanded="true" signature="4788:4865" placeholder="INSERT INTO ..." />
-            <marker date="1446544839748" expanded="true" signature="4927:5217" placeholder="UPDATE file ..." />
-            <marker date="1446544839748" expanded="true" signature="7930:8099" placeholder="SELECT count..file..." />
+            <marker date="1446544839000" expanded="true" signature="2320:2425" placeholder="INSERT INTO ..." />
+            <marker date="1446544839000" expanded="true" signature="4788:4865" placeholder="INSERT INTO ..." />
+            <marker date="1446544839000" expanded="true" signature="4927:5217" placeholder="UPDATE file ..." />
+            <marker date="1446544839000" expanded="true" signature="7930:8099" placeholder="SELECT count..file..." />
           </folding>
         </state>
       </provider>
@@ -534,10 +594,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1446544839748" expanded="true" signature="2320:2425" placeholder="INSERT INTO ..." />
-            <marker date="1446544839748" expanded="true" signature="4788:4865" placeholder="INSERT INTO ..." />
-            <marker date="1446544839748" expanded="true" signature="4927:5217" placeholder="UPDATE file ..." />
-            <marker date="1446544839748" expanded="true" signature="7930:8099" placeholder="SELECT count..file..." />
+            <marker date="1446544839000" expanded="true" signature="2320:2425" placeholder="INSERT INTO ..." />
+            <marker date="1446544839000" expanded="true" signature="4788:4865" placeholder="INSERT INTO ..." />
+            <marker date="1446544839000" expanded="true" signature="4927:5217" placeholder="UPDATE file ..." />
+            <marker date="1446544839000" expanded="true" signature="7930:8099" placeholder="SELECT count..file..." />
           </folding>
         </state>
       </provider>
@@ -586,10 +646,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
-            <marker date="1446544839748" expanded="true" signature="2320:2425" placeholder="INSERT INTO ..." />
-            <marker date="1446544839748" expanded="true" signature="4788:4865" placeholder="INSERT INTO ..." />
-            <marker date="1446544839748" expanded="true" signature="4927:5217" placeholder="UPDATE file ..." />
-            <marker date="1446544839748" expanded="true" signature="7930:8099" placeholder="SELECT count..file..." />
+            <marker date="1446544839000" expanded="true" signature="2320:2425" placeholder="INSERT INTO ..." />
+            <marker date="1446544839000" expanded="true" signature="4788:4865" placeholder="INSERT INTO ..." />
+            <marker date="1446544839000" expanded="true" signature="4927:5217" placeholder="UPDATE file ..." />
+            <marker date="1446544839000" expanded="true" signature="7930:8099" placeholder="SELECT count..file..." />
           </folding>
         </state>
       </provider>
@@ -606,10 +666,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1446544839748" expanded="true" signature="2320:2425" placeholder="INSERT INTO ..." />
-            <marker date="1446544839748" expanded="true" signature="4788:4865" placeholder="INSERT INTO ..." />
-            <marker date="1446544839748" expanded="true" signature="4927:5217" placeholder="UPDATE file ..." />
-            <marker date="1446544839748" expanded="true" signature="7930:8099" placeholder="SELECT count..file..." />
+            <marker date="1446544839000" expanded="true" signature="2320:2425" placeholder="INSERT INTO ..." />
+            <marker date="1446544839000" expanded="true" signature="4788:4865" placeholder="INSERT INTO ..." />
+            <marker date="1446544839000" expanded="true" signature="4927:5217" placeholder="UPDATE file ..." />
+            <marker date="1446544839000" expanded="true" signature="7930:8099" placeholder="SELECT count..file..." />
           </folding>
         </state>
       </provider>
@@ -740,45 +800,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///etc/php5/cli/php.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30666667">
-          <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../framework/base/CApplication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35913312">
-          <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EPU/index.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../framework/YiiBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="413" column="0" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../framework/db/ar/CActiveRecord.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21875">
-          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -800,7 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15679443">
           <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -854,14 +878,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/controllers/FileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4260564">
-          <caret line="116" column="79" selection-start-line="116" selection-start-column="79" selection-end-line="116" selection-end-column="79" />
+        <state vertical-scroll-proportion="-33.346153">
+          <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
           <folding>
-            <marker date="1446544839748" expanded="true" signature="2320:2425" placeholder="INSERT INTO ..." />
-            <marker date="1446544839748" expanded="true" signature="4788:4865" placeholder="INSERT INTO ..." />
-            <marker date="1446544839748" expanded="true" signature="4927:5217" placeholder="UPDATE file ..." />
-            <marker date="1446544839748" expanded="true" signature="7930:8099" placeholder="SELECT count..file..." />
+            <marker date="1446544839000" expanded="true" signature="2320:2425" placeholder="INSERT INTO ..." />
+            <marker date="1446544839000" expanded="true" signature="4788:4865" placeholder="INSERT INTO ..." />
+            <marker date="1446544839000" expanded="true" signature="4927:5217" placeholder="UPDATE file ..." />
+            <marker date="1446544839000" expanded="true" signature="7930:8099" placeholder="SELECT count..file..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20877193">
+          <caret line="7" column="71" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>
