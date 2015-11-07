@@ -1,0 +1,49 @@
+/*Table structure for table `country` */
+
+DROP TABLE IF EXISTS `country`;
+
+CREATE TABLE `country` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `country` char(2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `country` */
+
+insert  into `country`(`id`,`country`) values (1,'DE'),(2,'FR'),(3,'RO');
+
+/*Table structure for table `file` */
+
+DROP TABLE IF EXISTS `file`;
+
+CREATE TABLE `file` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `country` char(3) DEFAULT NULL,
+  `make` int(11) DEFAULT NULL,
+  `OEM` varchar(20) DEFAULT NULL,
+  `OEM_new` varchar(20) DEFAULT NULL,
+  `price` int(16) DEFAULT NULL,
+  `price_new` int(16) DEFAULT NULL,
+  `valid_from` date DEFAULT NULL,
+  `valid_to` date DEFAULT NULL,
+  `month` int(11) DEFAULT NULL,
+  `year` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `make` (`make`),
+  KEY `country` (`country`)
+) ENGINE=InnoDB AUTO_INCREMENT=566 DEFAULT CHARSET=latin1;
+
+/*Data for the table `file` */
+
+insert  into `file`(`id`,`country`,`make`,`OEM`,`OEM_new`,`price`,`price_new`,`valid_from`,`valid_to`,`month`,`year`) values (243,'COU',0,'OEM','OEM_NEW',0,0,'0000-00-00','0000-00-00',11,2014),(404,'COU',0,'OEM','OEM_NEW',0,0,'0000-00-00','0000-00-00',11,2015),(565,'COU',0,'OEM','OEM_NEW',0,0,'0000-00-00','0000-00-00',11,2015);
+
+/*Table structure for table `make` */
+
+DROP TABLE IF EXISTS `make`;
+
+CREATE TABLE `make` (
+  `id` int(11) NOT NULL,
+  `name` varchar(10) DEFAULT NULL,
+  `code` int(3) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
