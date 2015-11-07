@@ -1,0 +1,1323 @@
+/* Default link styling */
+a:link {
+    color: #fff;
+}
+
+a:visited {
+    color: #fff;
+}
+
+a:hover, a:focus {
+    color: #00406d;
+}
+
+a:active {
+    color: #fff;
+}
+
+body, html {
+    color: #949494;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    min-width: 20em;
+    background: #00406d;
+}
+
+hr {
+    float: left;
+    width: 100%;
+    margin: 20px 0;
+}
+
+main {
+    background-color: #fff;
+}
+
+.wrap {
+    width: 85%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.general {
+    width: 100% float : left;
+}
+
+#outer-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#inner-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+.leftAlign {
+    float: left;
+}
+
+.rightAlign {
+    float: right;
+}
+
+.block {
+    position: relative;
+    margin: 0 auto;
+}
+
+.close-btn {
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: url("../images/close-btn.png") left center no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.nav-btn {
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: url("../images/nav-icon.png") left center no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+header#top .block {
+    width: 96%;
+}
+
+#nav {
+    z-index: 200;
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    float: left;
+    color: #fff;
+}
+
+#nav .notifyCircle {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    font-size: 10px;
+    color: #fff;
+    line-height: 16px;
+    text-align: center;
+    background: #fe5d63;
+    display: block;
+    position: absolute;
+    right: -4px;
+    top: 10px;
+}
+
+#logo {
+    float: left;
+    width: 20%;
+}
+
+#logo img.desktopLogo {
+    margin: 10px 0 0 0;
+}
+
+#logo img.mobileLogo {
+    display: none;
+}
+
+#language {
+    float: right;
+    display: block;
+    height: inherit;
+    line-height: 40px;
+    font-size: 14px;
+    padding: 10px 30px;
+}
+
+#language a {
+    float: left;
+    margin: 0 5px;
+}
+
+#language span {
+    float: left;
+}
+
+#language a.currentLang {
+    color: #00406d;
+}
+
+button {
+    padding: 8px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+button.blue {
+    background-color: #00406d;
+    color: #fff;
+    margin-top: 15px;
+}
+
+#bannerImg {
+    float: left;
+    width: 100%;
+    height: auto;
+    background: none;
+    margin: 0 0 20px 0;
+}
+
+#bannerImg img {
+    width: 100%;
+}
+
+#nav .close-btn {
+    display: none;
+}
+
+#nav .block {
+    z-index: 2;
+    position: relative;
+}
+
+#nav ul {
+    *zoom: 1;
+    float: left;
+    margin-left: 10%;
+    display: block;
+}
+
+#nav ul:before, #nav ul:after {
+    content: "";
+    display: table;
+}
+
+#nav ul:after {
+    clear: both;
+}
+
+#nav li {
+    display: block;
+    float: left;
+    position: relative;
+}
+
+#nav li a {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    line-height: 40px;
+    outline: none;
+    position: relative;
+    padding: 10px;
+}
+
+#nav li a:focus, #nav li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#nav li.is-active a {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#top {
+    z-index: 100;
+    position: relative;
+    color: #fff;
+    background: #8fc647;
+    float: left;
+    width: 100%;
+}
+
+#top .nav-btn {
+    position: absolute;
+    top: 15px;
+    left: 2%;
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    #top .nav-btn {
+        display: block;
+    }
+
+    #nav {
+        position: absolute;
+        top: 0;
+        padding-top: 4.8em;
+    }
+
+    #nav:not(:target) {
+        z-index: 1;
+        height: 0;
+    }
+
+    #nav:target .close-btn {
+        display: block;
+        z-index: 100;
+    }
+
+    #nav .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+    }
+
+    #nav .block {
+        position: relative;
+        padding: 0;
+    }
+
+    #nav li {
+        position: relative;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        float: left;
+    }
+
+    #nav li:last-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #nav li.is-active:after {
+        z-index: 50;
+        display: block;
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -0.03125em;
+        margin-top: -0.625em;
+        border-top: 0.625em transparent solid;
+        border-bottom: 0.625em transparent solid;
+        border-right: 0.625em white solid;
+    }
+
+    #nav li a {
+        padding: 0.85714em 2.14286em;
+        float: left;
+        width: 100%;
+    }
+
+    .js-ready #nav {
+        height: 100%;
+        width: 70%;
+        background: #00406d;
+    }
+
+    .js-ready header#top .block {
+        width: auto !important;
+    }
+
+    .js-ready #nav .close-btn {
+        display: block;
+        z-index: 100;
+    }
+
+    .js-ready #nav {
+        left: -60%;
+    }
+
+    .js-ready #inner-wrap {
+        left: 0;
+    }
+
+    .js-nav #inner-wrap {
+        left: 60%;
+    }
+
+    .csstransforms3d.csstransitions.js-ready #nav {
+        left: 0;
+        height: inherit !important;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        -moz-transform: translate3d(-100%, 0, 0);
+        -ms-transform: translate3d(-100%, 0, 0);
+        -o-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .csstransforms3d.csstransitions.js-ready #inner-wrap {
+        left: 0 !important;
+        height: inherit !important;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-transition: -webkit-transform 500ms ease;
+        -moz-transition: -moz-transform 500ms ease;
+        -o-transition: -o-transform 500ms ease;
+        transition: transform 500ms ease;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .csstransforms3d.csstransitions.js-nav #inner-wrap {
+        -webkit-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+        -moz-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+        -ms-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+        -o-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+        transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+    }
+}
+
+#canvas-holder {
+    width: 30%;
+    float: left;
+    position: relative;
+}
+
+#chart-area {
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+}
+
+#chartLegend {
+    position: absolute;
+    top: 180px;
+    text-align: center;
+    color: #dfdfdf;
+    font-size: 12px;
+    width: 30%;
+}
+
+#chartLegend span.left {
+    float: left;
+    width: 30px;
+    text-align: center;
+    color: #949494;
+}
+
+#chartLegend span.right {
+    float: right;
+    width: 30px;
+    text-align: center;
+    color: #949494;
+}
+
+#chartScore {
+    position: absolute;
+    top: 80px;
+    color: #fcb275;
+    width: 30%;
+    text-align: center;
+}
+
+#chartScore h1 {
+    font-size: 280%;
+    line-height: 80%
+}
+
+#chartScore span {
+    letter-spacing: 3px;
+}
+
+#scoreMessage {
+    position: absolute;
+    left: 0;
+    top: 220px;
+    width: 35%;
+}
+
+#scoreMessage .messageCircle {
+    float: left;
+    margin: 0;
+    background: url('../images/scoreCircle.png') no-repeat center;
+    background-size: 100%;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#scoreMessage p {
+    float: left;
+    width: 66%;
+    padding-top: 20px;
+}
+
+#scoreMessage img {
+    position: absolute;
+    right: 0px;
+    top: 30px;
+}
+
+#adsArea {
+    width: 160px;
+    float: right;
+    height: 600px;
+    margin-bottom: 20px;
+    background: #ddd;
+    text-align: center;
+}
+
+#creditNumbers {
+    float: left;
+    width: 42%;
+    margin: 20px 0 0 10%;
+}
+
+#creditNumbers .row {
+    float: left;
+    width: 100%;
+    vertical-align: text-bottom;
+    padding-top: 15px;
+    line-height: 48px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+#creditNumbers .row span {
+    font-size: 34px;
+    float: left;
+    line-height: 34px;
+    padding-right: 20px;
+}
+
+#creditNumbers .row p {
+    float: left;
+    font-size: 16px;
+}
+
+#creditNumbers .row img {
+    float: right;
+}
+
+.creditStatistics {
+    font-size: 12px;
+}
+
+.creditStatistics .leftSide {
+    float: left;
+    width: 50%;
+    padding: 20px 0 0 0;
+}
+
+.creditStatistics .rightSide {
+    float: right;
+    text-align: right;
+    width: 50%;
+    padding: 20px 0 0 0;
+}
+
+#buttonsArea {
+    float: left;
+    width: 82%;
+    padding-top: 30px;
+}
+
+button.green {
+    background-color: #8fc647;
+    color: #fff;
+    margin-top: 15px;
+}
+
+select {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: none;
+    margin: 0 10px;
+    padding: 5px 30px 5px 10px;
+    border: 1px solid #dfdfdf;
+    background: transparent url('../images/arrowSelect.jpg') no-repeat right center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #949494;
+}
+
+.coinsArea {
+    float: right;
+}
+
+#newsletterArea {
+    float: left;
+    width: 82%;
+    padding-top: 40px;
+}
+
+#newsletterArea a {
+    float: right;
+    color: #00406e;
+    line-height: 24px;
+}
+
+#newsletterArea a span {
+    line-height: 26px;
+    float: left;
+    padding: 0 10px;
+}
+
+#newsletterArea a img {
+    float: left;
+}
+
+section#downloadApp {
+    float: left;
+    background: #f0eff4;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+section#downloadApp h2 {
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+section#downloadApp p {
+    padding: 10px 20%;
+    font-size: 12px;
+}
+
+h2 {
+    float: left;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+#uploadCI, #notificationsPage, #invalidCode, #historyPage, #socialArea {
+    width: 85%;
+    float: left;
+    padding-bottom: 20px;
+}
+
+#uploadCI .termsOuterBox {
+    float: left;
+    width: 100%;
+    margin: 0 0 20px 0;
+    overflow-y: scroll;
+    height: 200px;
+    background: #f0eff4;
+}
+
+#uploadCI .termsInnerBox {
+    float: left;
+    padding: 10px;
+}
+
+#uploadCI .termsInnerBox p {
+    padding: 10px 0;
+    font-size: 12px;
+    color: #000;
+}
+
+#uploadCI .uploadOrAccess {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+#uploadCI .uploadOrAccess .picArea, #uploadCI .uploadOrAccess .webcamArea {
+    float: left;
+    width: 44.6%;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+#uploadCI .uploadOrAccess .picArea button {
+    width: 30%;
+    float: left;
+    margin-left: 35%;
+}
+
+#uploadCI .uploadOrAccess span {
+    width: 10%;
+    text-align: center;
+    float: left;
+    text-transform: uppercase;
+    margin-top: 10%;
+    position: relative;
+}
+
+#uploadCI input[type="checkbox"] {
+    float: left;
+    line-height: 30px;
+}
+
+#uploadCI label {
+    float: left;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 0 10px;
+}
+
+#uploadCI button.openWebcam {
+    color: #00406e;
+    background: none;
+    border: none;
+    margin-top: 15px;
+}
+
+.dataInputs {
+    float: left;
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+
+.dataInputs .inputRow {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.dataInputs span {
+    float: left;
+    width: 20%;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.dataInputs b {
+    color: #fe5d63;
+}
+
+.dataInputs input[type="number"], .dataInputs input[type="date"], .dataInputs input[type="text"] {
+    float: left;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    color: #949494;
+    padding: 5px 10px;
+    border: 1px solid #dfdfdf;
+    width: 55%;
+}
+
+.box {
+    float: left;
+    width: 50%;
+    margin-top: 15px;
+}
+
+em.note {
+    color: #fe5d63;
+    font-size: 12px;
+    float: left;
+    width: 100%;
+    text-align: left;
+}
+
+#notificationsPage .notificationRow, #historyPage .notificationRow {
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+#notificationsPage .nRows {
+    padding-bottom: 30px;
+    float: left;
+}
+
+#notificationsPage .notificationRow span {
+    width: 80%;
+    padding-top: 10px;
+}
+
+button.delete {
+    background-color: #ed2933;
+    float: right;
+    color: #fff;
+}
+
+.panelHistory {
+    display: none;
+    float: left;
+    width: 100%;
+    margin: -1px 0 20px 0;
+}
+
+button.view {
+    background-color: #8fc647;
+    color: #fff;
+    float: right;
+}
+
+#creditNumbers.historyScores {
+    width: 90%;
+    float: left;
+    background: #f8f8f8;
+    margin: 0;
+    padding: 10px 5%;
+}
+
+#creditNumbers.historyScores .creditStatistics {
+    float: left;
+    width: 100%;
+    padding: 20px 0;
+}
+
+#creditNumbers.historyScores .creditStatistics span {
+    width: 25%;
+    display: block;
+    float: left;
+    text-align: center;
+}
+
+#invalidCode .invalidText {
+    color: #fe5d63;
+}
+
+#invalidCode .dataInputs input[type="number"], #invalidCode .dataInputs input[type="date"], #invalidCode .dataInputs input[type="text"] {
+    float: right;
+}
+
+#invalidCode .dataInputs span {
+    width: 30%;
+}
+
+.textConnect {
+    width: 100%;
+    float: left;
+    height: 1px;
+    background: #dfdfdf;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.textConnect span {
+    line-height: 24px;
+    margin: -12px 0 0 40%;
+    height: 24px;
+    width: 20%;
+    background: #fff;
+    display: block;
+}
+
+#socialArea {
+    text-align: center;
+}
+
+#socialArea a {
+    margin: 0 10px;
+}
+
+footer {
+    background-color: #00406e;
+    width: 100%;
+    float: left;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 12px;
+}
+
+footer span {
+    float: left;
+}
+
+footer ul {
+    float: right;
+}
+
+footer ul li {
+    float: left;
+    margin-right: 10px;
+}
+
+/* ---------------------------------------------------------
+   Media styles
+   ---------------------------------------------------------*/
+@media only screen and (min-width: 1801px) {
+    .wrap {
+        width: 63%;
+    }
+}
+
+@media only screen and (min-width: 1701px) and (max-width: 1800px) {
+    .wrap {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1550px) and (max-width: 1700px) {
+    .wrap {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1491px) and (max-width: 1550px) {
+    .wrap {
+        width: 85%;
+    }
+}
+
+@media only screen and (min-width: 1332px) and (max-width: 1490px) {
+    .wrap {
+        width: 88%;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1331px) {
+    .wrap {
+        width: 96%;
+    }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1025px) {
+    .wrap {
+        width: 96%;
+    }
+
+    #logo {
+        float: right;
+        margin: 15px 2%;
+        width: 40px;
+        background-size: 100%;
+    }
+
+    #logo img {
+        width: 80%;
+        float: right;
+    }
+
+    #logo img.desktopLogo {
+        display: none;
+    }
+
+    #logo img.mobileLogo {
+        display: block;
+    }
+
+    #language {
+        float: left;
+        margin-top: 20px;
+    }
+
+    #language a.currentLang {
+        background: #fff;
+        color: #949494;
+        padding: 0 15px;
+        border-radius: 3px;
+    }
+
+    header button {
+        float: right;
+        margin-top: 16px !important;
+    }
+
+    #nav ul {
+        margin: 0;
+        width: 100%;
+    }
+
+    #uploadCI, #notificationsPage, #invalidCode, #historyPage, #socialArea {
+        width: 80%;
+        float: left;
+    }
+
+    #uploadCI .uploadOrAccess .picArea button {
+        width: 40%;
+        margin-left: 30%;
+    }
+
+    .box {
+        width: 60%;
+    }
+
+    .btmBtns {
+        width: 100%;
+        float: left;
+        padding: 0 0 20px 0;
+    }
+
+    .dataInputs span {
+        float: left;
+        width: 30%;
+        font-size: 12px;
+        vertical-align: middle;
+        line-height: 30px;
+    }
+
+    .notificationRow span {
+        float: left;
+        width: 30%;
+        font-size: 12px;
+        vertical-align: middle;
+        line-height: 14px;
+    }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1025px) and (orientation: portrait) {
+    .wrap {
+        width: 96%;
+    }
+
+    #logo {
+        float: right;
+        margin: 15px 3% 3px 2%;
+        width: 40px;
+    }
+
+    #logo img {
+        width: 80%;
+        float: right;
+    }
+
+    #logo img.desktopLogo {
+        display: none;
+    }
+
+    #logo img.mobileLogo {
+        display: block;
+    }
+
+    #top {
+        padding-bottom: 10px;
+    }
+
+    #language {
+        float: left;
+        margin-top: 20px;
+    }
+
+    #language a.currentLang {
+        background: #fff;
+        color: #949494;
+        padding: 0 15px;
+        border-radius: 3px;
+    }
+
+    header button {
+        float: right;
+        margin-top: 15px !important;
+    }
+
+    #nav ul {
+        margin: 0;
+        width: 100%;
+    }
+
+    #adsArea {
+        display: none;
+    }
+
+    #chartScore {
+        width: 100%;
+        top: 200px;
+    }
+
+    #chartLegend {
+        width: 88%;
+        top: 350px;
+        left: 6%;
+        font-size: 120%;
+    }
+
+    #scoreMessage {
+        width: 90%;
+        left: 5%;
+        top: 440px;
+    }
+
+    #scoreMessage p {
+        font-size: 160%;
+    }
+
+    .messageCircle {
+        zoom: 1.2;
+    }
+
+    #creditNumbers {
+        margin: -10% 0 0 5%;
+        width: 90%;
+        position: relative;
+    }
+
+    #buttonsArea {
+        width: 100%;
+    }
+
+    #buttonsArea button {
+        float: right;
+    }
+
+    #buttonsArea select {
+        float: left;
+        margin-top: 15px;
+    }
+
+    #newsletterArea {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    #uploadCI, #notificationsPage, #invalidCode, #historyPage, #socialArea {
+        width: 100%;
+        float: left;
+    }
+
+    #uploadCI .uploadOrAccess .picArea button {
+        width: 40%;
+        margin-left: 30%;
+    }
+
+    .box {
+        width: 60%;
+    }
+
+    .btmBtns {
+        width: 100%;
+        float: left;
+        padding: 0 0 20px 0;
+    }
+
+    .dataInputs span {
+        float: left;
+        width: 30%;
+        font-size: 12px;
+        vertical-align: middle;
+        line-height: 30px;
+    }
+
+    .notificationRow span {
+        float: left;
+        width: 30%;
+        font-size: 12px;
+        vertical-align: middle;
+        line-height: 14px;
+    }
+
+    .dataInputs input[type="number"], .dataInputs input[type="date"], .dataInputs input[type="text"] {
+        width: 62%;
+    }
+
+    #canvas-holder {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .coinsArea {
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 737px) {
+    .wrap {
+        width: 94%;
+    }
+
+    #logo {
+        float: right;
+        margin: 15px 3% 3px 3%;
+        width: 35px;
+    }
+
+    #logo img {
+        width: 100%;
+        float: right;
+    }
+
+    #logo img.desktopLogo {
+        display: none;
+    }
+
+    #logo img.mobileLogo {
+        display: block;
+    }
+
+    #top .nav-btn {
+        left: 3%;
+    }
+
+    #top {
+        padding-bottom: 10px;
+    }
+
+    #language {
+        float: left;
+        margin-top: 20px;
+    }
+
+    #language a.currentLang {
+        background: #fff;
+        color: #949494;
+        padding: 0 15px;
+        border-radius: 3px;
+    }
+
+    header button {
+        float: right;
+        margin-top: 16px !important;
+    }
+
+    #nav ul {
+        margin: 0;
+        width: 100%;
+    }
+
+    #adsArea {
+        display: none;
+    }
+
+    #chartScore {
+        width: 100%;
+    }
+
+    #chartLegend {
+        width: 90%;
+        margin-left: 5%;
+        font-size: 90%;
+    }
+
+    #scoreMessage {
+        width: 92%;
+        left: 4%;
+    }
+
+    #scoreMessage p {
+        padding-top: 10px;
+    }
+
+    #creditNumbers {
+        margin: 20px 0 0 5%;
+        width: 90%;
+    }
+
+    #buttonsArea {
+        width: 100%;
+    }
+
+    #buttonsArea button {
+        float: right;
+    }
+
+    #buttonsArea select {
+        float: left;
+        margin-top: 15px;
+    }
+
+    #newsletterArea {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    #uploadCI, #notificationsPage, #invalidCode, #historyPage, #socialArea {
+        width: 100%;
+        float: left;
+    }
+
+    #uploadCI .uploadOrAccess .picArea, #uploadCI .uploadOrAccess .webcamArea {
+        float: left;
+        width: 99%;
+    }
+
+    #uploadCI .uploadOrAccess span {
+        width: 100%;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    .btmBtns {
+        width: 100%;
+        float: left;
+        padding: 15px 0;
+    }
+
+    .dataInputs span {
+        float: left;
+        width: 30%;
+        font-size: 12px;
+        vertical-align: middle;
+        line-height: 30px;
+    }
+
+    #invalidCode .dataInputs span {
+        line-height: 14px;
+    }
+
+    .notificationRow span {
+        float: left;
+        width: 30%;
+        font-size: 12px;
+        vertical-align: middle;
+        line-height: 14px;
+    }
+
+    .dataInputs input[type="number"], .dataInputs input[type="date"], .dataInputs input[type="text"] {
+        width: 62%;
+    }
+
+    #notificationsPage .notificationRow span {
+        width: 65%;
+        padding-top: 0;
+    }
+
+    #historyPage .notificationRow span {
+        width: 65%;
+        padding-top: 0;
+        line-height: 30px;
+    }
+
+    #creditNumbers.historyScores .creditStatistics span {
+        width: 50%;
+        display: block;
+        float: left;
+        text-align: left;
+    }
+
+    #creditNumbers.historyScores .creditStatistics span:first-child, #creditNumbers.historyScores .creditStatistics span:nth-child(2) {
+        padding-bottom: 15px;
+    }
+
+    #canvas-holder {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .textConnect span {
+        margin: -12px 0 0 25%;
+        width: 50%;
+    }
+
+    section#downloadApp p {
+        padding: 10px 5%;
+    }
+
+    footer span {
+        padding: 15px 0 0 0;
+    }
+}

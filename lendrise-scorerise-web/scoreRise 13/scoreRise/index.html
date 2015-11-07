@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>ScoreRise</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="js/modernizr.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <link href="css/normalize.css" rel="stylesheet" media="all">
+    <link href="css/styles.css" rel="stylesheet" media="all">
+</head>
+<body>
+<div id="outer-wrap">
+    <div id="inner-wrap">
+        <header id="top" role="banner">
+            <div class="block">
+                <a class="nav-btn" id="nav-open-btn" href="#nav"></a>
+
+                <nav id="nav" role="navigation">
+                    <div id="logo">
+                        <img src="images/logo_scoreRise.png" class="desktopLogo"/>
+                    </div>
+                    <ul>
+                        <li class="is-active">
+                            <a href="#">My Score</a>
+                        </li>
+                        <li>
+                            <a href="#">Notifications <span class="notifyCircle">2</span></a>
+                        </li>
+                        <li>
+                            <a href="#">History</a>
+                        </li>
+                    </ul>
+                    <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+
+                    <div id="language">
+                        <a href="" class="currentLang">RO</a>
+                        <a href="">EN</a>
+                    </div>
+                </nav>
+
+                <div id="logo">
+                    <img src="images/smalllogo_scoreRise.png" class="mobileLogo"/>
+                </div>
+                <button class="blue">Login</button>
+            </div>
+        </header>
+
+
+        <div id="bannerImg">
+            <img src="images/scoreRise_banner.jpg"/>
+        </div>
+
+
+        <main role="main">
+            <div class="wrap">
+                <section class="block">
+                    <!--<div id="canvas-holder">
+                        <canvas id="chart-area" width="500" height="500"/>
+                    </div>
+                    <div id="chartScore">
+                        <h1>650</h1>
+                        <span>good</span></div>
+                    <div id="chartLegend">
+                        <span class="left">300</span>
+                        Last Scan: 23.07.2015
+                        <span class="right">850</span>
+                    </div>
+                    <div id="scoreMessage">
+                        <div class="messageCircle">22.5%</div>
+                        <p>Your credit ranks higher that 22,3% of the Romanian population</p>
+                        <a href=""><img src="images/infoButton.png"></a>
+                    </div>
+                    <div id="creditNumbers">
+                        <div class="row">
+                            <span>650</span>
+                            <p>Your Credit Score</p>
+                            <a href=""><img src="images/infoButton.png"></a>
+                        </div>
+                        <div class="row">
+                            <span>23,551</span>
+                            <p>Total Balance</p>
+                        </div>
+                        <div class="row">
+                            <span>606</span>
+                            <p>Monthly Payments</p>
+                        </div>
+                        <div class="row">
+                            <span>7</span>
+                            <p>Total Number of Accounts</p>
+                        </div>
+                        <div class="creditStatistics">
+                            <div class="leftSide"><strong>2</strong> Open</div>
+                            <div class="rightSide"><strong>1</strong> Closed</div>
+                            <div class="leftSide"><strong>0</strong> Deliquent</div>
+                            <div class="rightSide"><strong>1</strong> Derogatory</div>
+                        </div>
+                    </div>-->
+
+                    <div id="uploadCI">
+                        <h2>Step 1</h2>
+
+                        <div class="termsOuterBox">
+                            <div class="termsInnerBox">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                    deserunt mollit anim id est laborum.</p>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                    deserunt mollit anim id est laborum.</p>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                    deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+
+                        <div class="uploadOrAccess">
+                            <div class="picArea">
+                                <img src="images/genericPic.png">
+                                <br/>
+                                <button class="green">Buy Coins</button>
+                            </div>
+                            <span>or</span>
+
+                            <div class="webcamArea rightAlign">
+                                <img src="images/webcam.png">
+                                <br/>
+                                <button class="openWebcam">access camera from browser</button>
+                            </div>
+                        </div>
+
+                        <div class="box"><input type="checkbox"/> <label>I agree with the terms and conditions</label>
+                        </div>
+                        <button class="blue rightAlign">next</button>
+
+                        <hr>
+
+                        <h2>Step 2</h2>
+
+                        <div class="dataInputs">
+                            <div class="inputRow"><span>First Name<b>*</b></span> <input type="text"/></div>
+                            <div class="inputRow"><span>Last Name<b>*</b></span><input type="text"/></div>
+                            <div class="inputRow"><span>Social ID<b>*</b></span> <input type="text"/></div>
+                            <div class="inputRow"><span>CNP<b>*</b></span> <input type="text"/></div>
+                            <div class="inputRow"><span>Date of Birth</span> <input type="date"/></div>
+                            <div class="inputRow"><span>Adress</span> <input type="text"/></div>
+                        </div>
+
+                        <em class="note">* Mandatory</em>
+
+                        <div class="btmBtns">
+                            <button class="green leftAlign">Re-Upload</button>
+                            <button class="blue rightAlign">Get Score</button>
+                        </div>
+                    </div>
+
+                    <div id="adsArea">Ads Placeholder</div>
+
+                    <hr/>
+
+                    <div id="notificationsPage">
+                        <h2>Notifications</h2>
+
+                        <div class="nRows">
+                            <div class="notificationRow"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+                                <button class="delete">Delete</button>
+                            </div>
+                            <div class="notificationRow"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</span>
+                                <button class="delete">Delete</button>
+                            </div>
+                            <div class="notificationRow"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
+                                <button class="delete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr/>
+
+                    <div id="historyPage">
+                        <h2>History</h2>
+
+                        <div class="nRows">
+                            <div class="notificationRow"><span>22 July 2015</span>
+                                <button class="view viewHistory">View</button>
+                            </div>
+                            <div class="panelHistory" id="panel1">
+                                <div id="creditNumbers" class="historyScores">
+                                    <div class="row">
+                                        <span>650</span>
+
+                                        <p>Your Credit Score</p>
+                                    </div>
+                                    <div class="row">
+                                        <span>23,551</span>
+
+                                        <p>Total Balance</p>
+                                    </div>
+                                    <div class="row">
+                                        <span>606</span>
+
+                                        <p>Monthly Payments</p>
+                                    </div>
+                                    <div class="row">
+                                        <span>7</span>
+
+                                        <p>Total Number of Accounts</p>
+                                    </div>
+                                    <div class="creditStatistics">
+                                        <span><strong>2</strong> Open</span>
+                                        <span><strong>1</strong> Closed</span>
+                                        <span><strong>0</strong> Deliquent</span>
+                                        <span><strong>1</strong> Derogatory</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationRow"><span>22 July 2015</span>
+                                <button class="view viewHistory">View</button>
+                            </div>
+                            <div class="panelHistory" id="panel2">
+                                <div id="creditNumbers" class="historyScores">
+                                    <div class="row">
+                                        <span>650</span>
+
+                                        <p>Your Credit Score</p>
+                                    </div>
+                                    <div class="row">
+                                        <span>23,551</span>
+
+                                        <p>Total Balance</p>
+                                    </div>
+                                    <div class="row">
+                                        <span>606</span>
+
+                                        <p>Monthly Payments</p>
+                                    </div>
+                                    <div class="row">
+                                        <span>7</span>
+
+                                        <p>Total Number of Accounts</p>
+                                    </div>
+                                    <div class="creditStatistics">
+                                        <span><strong>2</strong> Open</span>
+                                        <span><strong>1</strong> Closed</span>
+                                        <span><strong>0</strong> Deliquent</span>
+                                        <span><strong>1</strong> Derogatory</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationRow"><span>22 July 2015</span>
+                                <button class="view viewHistory">View</button>
+                            </div>
+                            <div class="panelHistory" id="panel3">
+                                <div id="creditNumbers" class="historyScores">
+                                    <div class="row">
+                                        <span>650</span>
+
+                                        <p>Your Credit Score</p>
+                                    </div>
+                                    <div class="row">
+                                        <span>23,551</span>
+
+                                        <p>Total Balance</p>
+                                    </div>
+                                    <div class="row">
+                                        <span>606</span>
+
+                                        <p>Monthly Payments</p>
+                                    </div>
+                                    <div class="row">
+                                        <span>7</span>
+
+                                        <p>Total Number of Accounts</p>
+                                    </div>
+                                    <div class="creditStatistics">
+                                        <span><strong>2</strong> Open</span>
+                                        <span><strong>1</strong> Closed</span>
+                                        <span><strong>0</strong> Deliquent</span>
+                                        <span><strong>1</strong> Derogatory</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr/>
+
+                    <div id="invalidCode">
+                        <h2 class="invalidText">Invalid Code</h2>
+
+                        <div class="dataInputs">
+                            <div class="inputRow"><span>Resend email validation code</span> <input class="rightAlign"
+                                                                                                   type="text"/></div>
+
+                            <button class="green rightAlign">Resend Code</button>
+                        </div>
+                    </div>
+
+                    <hr/>
+
+                    <div id="socialArea">
+                        <div class="textConnect"><span>or connect with</span></div>
+                        <a href="#">
+                            <img src="images/facebook.png">
+                        </a>
+                        <a href="#">
+                            <img src="images/google.png">
+                        </a>
+                        <a href="#">
+                            <img src="images/linkedin.png">
+                        </a>
+                    </div>
+
+
+                    <!--<div id="buttonsArea">
+                        <button class="green">Re-Check Score</button>
+                        <div class="coinsArea">
+                            <select>
+                                <option>1 coin (1,99€)</option>
+                                <option>2 coin (1,99€)</option>
+                                <option>3 coin (1,99€)</option>
+                                <option>4 coin (1,99€)</option>
+                            </select>
+                            <button class="green">Buy Coins</button>
+                        </div>
+                    </div>
+                    <div id="newsletterArea">
+                        <a href="#"><img src="images/iconEmail.png"> <span>Receive report via e-mail</span> <img src="images/iconEmailArrow.png"></a>
+                    </div>-->
+                </section>
+            </div>
+        </main>
+
+        <section id="downloadApp">
+            <div class="wrap">
+                <h2>Download Application</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
+                <a href="#"><img src="images/appStoreIOS.png"></a>
+            </div>
+        </section>
+
+        <footer role="contentinfo">
+            <div class="wrap block">
+                <ul>
+                    <li class="is-active">
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">My Score</a>
+                    </li>
+                    <li>
+                        <a href="#">Notifications</a>
+                    </li>
+                    <li>
+                        <a href="#">History</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms &amp; Conditions</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                <span>Copyright &copy;
+                    <time datetime="2015">2015</time></span>
+            </div>
+        </footer>
+
+    </div>
+</div>
+<script src="js/menu.js"></script>
+
+<script>
+    var doughnutData = [
+        {
+            value: 400,
+            color: "#fcb275",
+            highlight: "#fcb275",
+            label: "Red"
+        },
+        {
+            value: 100,
+            color: "#eee",
+            highlight: "#eee",
+            label: ""
+        },
+        {
+            value: 500,
+            color: "#fff",
+            highlight: "#fff",
+            label: ""
+        }];
+
+    window.onload = function () {
+        var ctx = document.getElementById("chart-area").getContext("2d");
+        window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
+            responsive: true,
+            segmentShowStroke: false,
+            percentageInnerCutout: 80,
+            animationEasing: "easeOut"
+        });
+    };
+
+
+    $(document).ready(function () {
+        $(".viewHistory").click(function () {
+            $(".panelHistory").slideToggle("slow");
+        });
+    });
+</script>
+</script>
+</
+body >
+< / html >
