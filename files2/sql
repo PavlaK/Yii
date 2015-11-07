@@ -1,0 +1,45 @@
+/*Table structure for table `file` */
+
+DROP TABLE IF EXISTS `file`;
+
+CREATE TABLE `file` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(30) NOT NULL,
+  `file` blob,
+  `status` tinyint(1) DEFAULT '1',
+  `author_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `author` (`author_id`),
+  CONSTRAINT `author` FOREIGN KEY (`author_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+/*Data for the table `file` */
+
+insert  into `file`(`id`,`title`,`file`,`status`,`author_id`) values (9,'ASD','images/frog.jpeg',1,NULL),(10,'frog2','images/frog.jpeg',1,NULL);
+
+/*Table structure for table `tbl_migration` */
+
+DROP TABLE IF EXISTS `tbl_migration`;
+
+CREATE TABLE `tbl_migration` (
+  `version` varchar(180) NOT NULL,
+  `apply_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_migration` */
+
+insert  into `tbl_migration`(`version`,`apply_time`) values ('m000000_000000_base',1440060377),('m150820_084503_table',1440060490);
+
+/*Table structure for table `user` */
+
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,
+  `password` text,
+  `email` varchar(30) NOT NULL,
+  `level` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
